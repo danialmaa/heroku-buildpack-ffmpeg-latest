@@ -50,6 +50,10 @@ if [ "$?" != "0" ]; then
   echo "Failed to unpack" | output && exit 1
 fi
 
+./configure --prefix=$HOME/local
+make
+make install
+
 rm $FFMPEG_ARCHIVE_NAME
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
